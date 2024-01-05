@@ -30,3 +30,16 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     const totalBalance = balanceInput + totalDepositAmount;
     setTextElementValueById('balance-text', totalBalance);
 })
+document.getElementById('btn-withdraw').addEventListener('click', function(){
+    const withdrawInput = getInputValueById('withdraw-input');
+    const withdrawText = getTextValueById('withdraw-text');
+    const totalWithdraw = withdrawInput + withdrawText;
+    setTextElementValueById('withdraw-text', totalWithdraw);
+    const balanceInput =getTextValueById('balance-text');
+    if(withdrawInput > balanceInput){
+        alert("Not enough money!!")
+        return;
+    }
+    const totalWithdrawValue = balanceInput - totalWithdraw;
+    setTextElementValueById('balance-text',totalWithdrawValue);
+})
